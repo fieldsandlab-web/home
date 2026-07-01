@@ -1,0 +1,35 @@
+/* Mobile-first responsive stylesheet for Fields and Lab */
+:root{
+  --accent:#1e90ff;
+  --muted:#f2f4f8;
+  --text:#222;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family: Georgia, 'Times New Roman', serif; margin:0; color:var(--text); background:#fff; -webkit-font-smoothing:antialiased}
+.site-header{text-align:center;padding:18px 12px;border-bottom:1px solid #e0e0e0}
+.site-header h1{margin:0;font-size:24px;color:#777}
+.container{max-width:720px;margin:0 auto;padding:14px}
+.logo{display:flex;justify-content:center;margin:12px 0}
+.logo img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:6px solid var(--accent);background:#fff}
+.cards{display:flex;justify-content:space-between;gap:10px;margin-bottom:14px}
+.card{flex:1;display:flex;justify-content:center}
+.circle{width:84px;height:84px;border-radius:50%;background:var(--muted);border:1px solid #cfcfcf}
+.menu{display:flex;flex-direction:column;gap:10px}
+.menu-item{display:block;text-decoration:none;background:#f6f6f6;padding:14px;border-radius:6px;text-align:center;color:var(--text);font-size:16px}
+.menu-item .ko{display:block;color:#666;margin-top:6px;font-size:14px}
+.menu-item:active,.menu-item:focus{background:#e9f0ff}
+.site-footer{text-align:center;padding:12px;border-top:1px solid #e0e0e0;color:#555;font-size:14px}
+
+/* Larger screens: arrange columns */
+@media (min-width:700px){
+  .container{display:grid;grid-template-columns:220px 1fr;grid-gap:20px;align-items:start}
+  .logo{grid-column:1/2;justify-content:flex-start}
+  .cards{grid-column:2/3;justify-content:flex-end}
+  .menu{grid-column:1/2}
+  .site-header h1{font-size:36px}
+  .logo img{width:150px;height:150px}
+}
+
+/* Accessibility: increase tap targets */
+.menu-item{min-height:56px;display:flex;align-items:center;justify-content:center}
